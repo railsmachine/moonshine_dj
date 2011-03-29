@@ -32,8 +32,6 @@ Add the `:dj` role to any servers that run DJ:
     # config/deploy/production.rb
     server 'myapp.com', :web, :dj, :db, :primary => true
 
-Deploy. Done.
-
 ### Managing DJ with God
 
 This plugin also provides the following Capistrano tasks:
@@ -48,3 +46,6 @@ We recommend having DJ restart on deploy to reload code changes:
     # config/deploy.rb
     before 'god:restart', 'god:dj:stop'
 
+### Deploying
+
+That's it. Deploy and done!
