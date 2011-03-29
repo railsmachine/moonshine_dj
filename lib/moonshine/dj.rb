@@ -10,7 +10,7 @@ module Moonshine
       file "/etc/god/dj.god",
         :content => template(File.join(File.dirname(__FILE__), '..', '..', 'templates', 'dj.god.erb'), binding),
         :ensure => :file,
-        :notify => service('god'),
+        :notify => exec('restart_god'),
         :require => file('/etc/god/god.conf')
     end
   end
