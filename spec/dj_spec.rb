@@ -23,6 +23,8 @@ describe "A manifest with the DJ plugin" do
       dj_file = @manifest.files["/etc/god/dj.god"]['content']
       dj_file.should_not be_nil
       dj_file.should include("1.times do |num|")
+      dj_file.should include("w.group    = '#{@manifest.configuration[:application]}-dj'")
+      dj_file.should include("w.name     = \"#{@manifest.configuration[:application]}-dj")
     end
   end
 

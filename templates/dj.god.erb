@@ -1,7 +1,7 @@
 <%= options[:workers] %>.times do |num|
   God.watch do |w|
-    w.name     = "dj-#{num}"
-    w.group    = 'dj'
+    w.name     = "<%= configuration[:application] %>-dj-#{num}"
+    w.group    = '<%= configuration[:applcation] %>-dj'
     w.interval = 30.seconds
     w.log      = File.join(RAILS_ROOT, 'log', "#{w.name}.god.log")
     w.uid      = 'rails'
