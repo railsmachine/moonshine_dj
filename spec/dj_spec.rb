@@ -20,7 +20,7 @@ describe "A manifest with the DJ plugin" do
     end
 
     it "should install the template" do
-      dj_file = @manifest.files["/etc/god/dj.god"]['content']
+      dj_file = @manifest.files["/etc/god/#{@manifest.configuration[:application]}-dj.god"]['content']
       dj_file.should_not be_nil
       dj_file.should include("1.times do |num|")
       dj_file.should include("w.group    = '#{@manifest.configuration[:application]}-dj'")
@@ -35,7 +35,7 @@ describe "A manifest with the DJ plugin" do
     end
     
     it "should install the template with configuration" do
-      dj_file = @manifest.files["/etc/god/dj.god"]['content']
+      dj_file = @manifest.files["/etc/god/#{@manifest.configuration[:application]}-dj.god"]['content']
       dj_file.should_not be_nil
       dj_file.should include("2.times do |num|")
     end
