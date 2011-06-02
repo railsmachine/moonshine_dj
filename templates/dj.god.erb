@@ -6,9 +6,9 @@
     w.log      = File.join(RAILS_ROOT, 'log', "#{w.name}.god.log")
     w.uid      = 'rails'
     w.gid      = 'rails'
-    w.env      = { 'RAILS_ENV' => RAILS_ENV }
+    w.env      = { 'RAILS_ENV' => RAILS_ENV, 'HOME' => '/home/rails' }
     w.dir      = RAILS_ROOT
-    w.start    = "rake -f #{RAILS_ROOT}/Rakefile jobs:work"
+    w.start    = "rake -f #{RAILS_ROOT}/Rakefile jobs:work --trace"
 
     # restart if memory gets too high
     w.transition(:up, :restart) do |on|
