@@ -6,7 +6,7 @@
     w.log      = File.join(RAILS_ROOT, 'log', "#{w.name}.god.log")
     w.uid      = '<%= configuration[:user] %>'
     w.gid      = '<%= configuration[:group] || configuration[:user] %>'
-    w.env      = { 'RAILS_ENV' => RAILS_ENV, 'HOME' => '/home/<%= configuration[:user] %> }
+    w.env      = { 'RAILS_ENV' => RAILS_ENV, 'HOME' => '/home/<%= configuration[:user] %>' }
     w.dir      = RAILS_ROOT
     w.start    = "rake -f #{RAILS_ROOT}/Rakefile jobs:work --trace"
 
