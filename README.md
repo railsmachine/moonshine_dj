@@ -19,6 +19,7 @@ Configure as necessary in your moonshine.yml (or stage-specific moonshine yml):
 
     :dj:
       :workers: 2
+      :memory_max: 300
       
 
 Next, add the recipe to the manifests in question:
